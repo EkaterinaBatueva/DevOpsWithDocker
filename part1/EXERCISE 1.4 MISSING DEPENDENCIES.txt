@@ -1,0 +1,4 @@
+docker run -it --name website-searcher ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+docker exec website-searcher apt-get update      
+docker exec website-searcher apt-get -y install curl
+docker attach website-searcher

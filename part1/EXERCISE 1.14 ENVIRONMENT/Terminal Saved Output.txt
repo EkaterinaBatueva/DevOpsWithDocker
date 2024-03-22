@@ -1,0 +1,4 @@
+% cd example-backend                                                                                                                
+% docker build --platform linux/amd64 -t backend-project . && docker run -d -p 8080:8080 backend-project
+% cd ../example-frontend
+% docker build . -t frontend-project && docker run -d -p 5001:5000 frontend-project
