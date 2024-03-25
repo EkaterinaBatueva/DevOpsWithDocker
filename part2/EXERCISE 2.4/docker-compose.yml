@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    image: frontend-project
+    build: ./frontend-project
+    ports:
+      - "5001:5000"
+   
+
+  backend:
+    image: backend-project
+    build: ./backend-project
+    ports:
+      - "8080:8080"
+    environment:
+      - REDIS_HOST=redis
+
+
+  redis:
+    image: redis
+    restart: always
+
+    

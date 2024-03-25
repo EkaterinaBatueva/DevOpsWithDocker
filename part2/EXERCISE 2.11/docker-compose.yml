@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  jupyter:
+    build: . # Build with the Dockerfile here
+    ports:
+      - 10000:8888
+    volumes:
+      - ./:/usr/src/app

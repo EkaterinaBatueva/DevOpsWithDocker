@@ -1,0 +1,5 @@
+The provided Dockerfile sets up a container based on the jupyter/base-notebook image, configuring it to use /usr/src/app as its working directory and copying the contents of the current directory into it. Current directory contains python file with matrix operation functions, images that are used as example for developing functions for image processing.
+
+The accompanying docker-compose.yml file defines a service named jupyter, specifying that it should be built using the Dockerfile in the current directory. It maps port 10000 on the host machine to port 8888 inside the container, enabling access to the Jupyter notebook server, and mounts the current directory into /usr/src/app within the container, facilitating file sharing between the host and the Jupyter environment.
+
+After starting the container it is possible to open final-DS.ipynb to continue developing image processing functions or use existing ones.
