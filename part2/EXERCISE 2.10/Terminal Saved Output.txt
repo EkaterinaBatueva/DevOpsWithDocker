@@ -1,0 +1,30 @@
+# Since I have mac m1, I used netstat -an | grep LISTEN. instead of docker run -it --rm --network host networkstatic/nmap localhost
+% docker compose up -d      
+
+% netstat -an | grep LISTEN.
+tcp46      0      0  *.8080                 *.*                    LISTEN     
+tcp46      0      0  *.80                   *.*                    LISTEN     
+tcp46      0      0  *.5001                 *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.5432         *.*                    LISTEN     
+tcp6       0      0  ::1.5432               *.*                    LISTEN     
+tcp6       0      0  *.5000                 *.*                    LISTEN     
+tcp4       0      0  *.5000                 *.*                    LISTEN     
+tcp6       0      0  *.7000                 *.*                    LISTEN     
+tcp4       0      0  *.7000                 *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.29754        *.*                    LISTEN     
+
+% docker compose down  
+     
+% docker compose up -d      
+
+% netstat -an | grep LISTEN. # It could be seen that ports 5001 and 8080 closed (5000 is reserved in the newest OSX version)
+tcp46      0      0  *.80                   *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.5432         *.*                    LISTEN     
+tcp6       0      0  ::1.5432               *.*                    LISTEN     
+tcp6       0      0  *.5000                 *.*                    LISTEN     
+tcp4       0      0  *.5000                 *.*                    LISTEN     
+tcp6       0      0  *.7000                 *.*                    LISTEN     
+tcp4       0      0  *.7000                 *.*                    LISTEN     
+tcp4       0      0  127.0.0.1.29754        *.*                    LISTEN     
+
+% docker compose down
